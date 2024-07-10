@@ -12,11 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let email = document.getElementById('email').value.trim();
         let password = document.getElementById('password').value.trim();
 
-        // Validation des champs
-        if (prenom === '' || nom === '' || email === '' || password === '') {
-            alert('Tous les champs doivent être remplis');
-            return;
-        }
+
 
         // Validation de la longueur des champs prénom et nom
         if (prenom.length < 3 || prenom.length > 15) {
@@ -41,8 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Si toutes les validations passent, soumettre le formulaire
-        alert('Formulaire soumis avec succès!');
-        myForm.submit();
+        //masquer le formulaire et affiher le message de soummission du formulaire
+        document.getElementById('myForm').style.display = 'none';
+        document.getElementById('submitMessage').style.display = 'block';
+      
     });
 });
