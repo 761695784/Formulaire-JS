@@ -1,8 +1,11 @@
+//
 document.addEventListener('DOMContentLoaded', function() {
+    //rekuperation du formulaire par son id 
     let myForm = document.getElementById('myForm');
+    // Ajout d'un écouteur d'événement sur le formulaire pour le soumission
     myForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Empêche le navigateur de soumettre le formulaire normalement
-
+        // Empêcher le comportement par défaut du formulaire (soumission immédiate)
+        event.preventDefault(); 
         // Récupération des données du formulaire
         let prenom = document.getElementById('prenom').value.trim();
         let nom = document.getElementById('nom').value.trim();
@@ -17,24 +20,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Validation de la longueur des champs prénom et nom
         if (prenom.length < 3 || prenom.length > 15) {
-            alert('Le prénom doit comporter entre 3 et 15 caractères');
+            document.getElementById('prenomError').innerText="Le prenom doit comporter entre 3 et 15 caractères";
             return;
         }
         if (nom.length < 3 || nom.length > 15) {
-            alert('Le nom doit comporter entre 3 et 15 caractères');
+            document.getElementById('nomError').innerText="Le nom doit comporter entre 3 et 15 caractères";
             return;
         }
 
         // Validation de l'email
         let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!regexEmail.test(email)) {
-            alert('Veuillez saisir un email valide');
+            document.getElementById('emailError').innerText="L'email est invalide";
             return;
         }
 
         // Validation du mot de passe
         if (password.length < 8) {
-            alert('Le mot de passe doit comporter au moins 8 caractères');
+            document.getElementById('passwordError').innerText="Le mot de passe doit comporter au moins 8 caractères";   
             return;
         }
 

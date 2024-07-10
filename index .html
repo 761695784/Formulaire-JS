@@ -12,29 +12,29 @@
  
     }
   </style>
-    <form id="myForm">
+    <form id="myForm" action="/" method="POST">
 
         <div class="form-group">
           <label for="prenom">Prénom</label>
           <input type="text" class="form-control" id="prenom" placeholder="Prénom" name="prenom">
-          <span id="prenomError" class="error"></span>
+          <div id="prenomError" class="error"></div>
         </div><br
         <div class="form-group">
           <label for="nom">Nom</label>
           <input type="text" class="form-control" id="nom" placeholder="Nom" name="nom">
-          <span id="nomError" class="error"></span>
+          <div id="nomError" class="error"></div>
         </div><br>
     
         <div class="form-group">
           <label for="email">Email address</label>
           <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
-          <span id="emailError" class="error"></span>
+          <div id="emailError" class="error"></div>
         </div> <br>
 
         <div class="form-group">
           <label for="password">Password</label>
           <input type="password" class="form-control" id="password" placeholder="Password" name="Password">
-          <span id="passwordError" class="error">test</span>
+        <div id="passwordError" class="error"></div>
         </div>
        
         <button type="submit" class="btn btn-primary">Submit</button>
