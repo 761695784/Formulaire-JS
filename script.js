@@ -2,6 +2,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     //rekuperation du formulaire par son id 
     let myForm = document.getElementById('myForm');
+    let successMessage = document.getElementById('successMessage');
+
     // Ajout d'un écouteur d'événement sur le formulaire pour le soumission
     myForm.addEventListener('submit', function(event) {
         // Empêcher le comportement par défaut du formulaire (soumission immédiate)
@@ -37,9 +39,16 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        //masquer le formulaire et affiher le message de soummission du formulaire
-        document.getElementById('myForm').style.display = 'none';
-        document.getElementById('submitMessage').style.display = 'block';
+        //
+        myForm.style.display = 'none';
+        successMessage.style.display = 'block';
       
     });
 });
+    function closePopup() {
+        let successMessage = document.getElementById('successMessage');
+        successMessage.style.display = 'none';
+        let myForm = document.getElementById('myForm');
+        myForm.style.display = 'block';
+        myForm.reset();
+    }

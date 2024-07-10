@@ -35,6 +35,34 @@
           margin-top: 5px;
         
       } 
+      body {
+    font-family: Arial, sans-serif;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#successMessage p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#successMessage button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 5px 10px;
+}
   </style>
   <div class="container">
     <form id="myForm" action="/" method="POST">
@@ -64,7 +92,10 @@
        
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
-
+      <div id="successMessage" class="popup">
+        <p>Formulaire soumis avec succès!</p>
+        <button onclick="closePopup()">OK</button>
+    </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
